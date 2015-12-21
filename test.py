@@ -10,3 +10,6 @@ class WorkForSaraTest(unittest.TestCase):
     def test_do_next_step(self):
         self.assertEqual(9, do_next_step(18))
         self.assertEqual(28, do_next_step(9))
+
+    def test_count_steps(self):
+        self.assertEqual(20, count_steps(18))
