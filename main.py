@@ -15,3 +15,10 @@ def count_steps(number):
         number = do_next_step(number)
         count_of_steps += 1
     return count_of_steps
+
+
+def generate_range(start, end):
+    result = {}
+    for x in range(start, end + 1):
+        result[x] = 0
+    return result
