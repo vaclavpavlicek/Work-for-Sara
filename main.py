@@ -29,3 +29,12 @@ def get_count_of_steps_for_every_number(start, end):
     for x in range(start, end + 1):
         result[x] = count_steps(x)
     return result
+
+
+def find_the_highest_count_of_steps(actual_range, start):
+    result = [0, 0]
+    for x in range(start, len(actual_range) + 1):
+        if result[0] < actual_range[x]:
+            result[0] = actual_range[x]
+            result[1] = x
+    return str(result[0]) + " " + str(result[1])

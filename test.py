@@ -33,3 +33,13 @@ class WorkForSaraTest(unittest.TestCase):
             5: 5
         }
         self.assertEquals(expected_range, get_count_of_steps_for_every_number(1, 5))
+
+    def test_find_the_highest_count_of_steps(self):
+        actual_range = {
+            1: 0,
+            2: 1,
+            3: 7,
+            4: 2,
+            5: 5
+        }
+        self.assertEquals("7 3", find_the_highest_count_of_steps(actual_range, 1))
