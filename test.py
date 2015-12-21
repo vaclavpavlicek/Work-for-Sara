@@ -15,12 +15,21 @@ class WorkForSaraTest(unittest.TestCase):
         self.assertEqual(20, count_steps(18))
 
     def test_generate_range(self):
-        range = {
+        expected_range = {
             1: 0,
             2: 0,
             3: 0,
             4: 0,
             5: 0
         }
-        self.assertEquals(range, generate_range(1, 5))
+        self.assertEquals(expected_range, generate_range(1, 5))
 
+    def test_get_count_of_steps_for_every_number(self):
+        expected_range = {
+            1: 0,
+            2: 1,
+            3: 7,
+            4: 2,
+            5: 5
+        }
+        self.assertEquals(expected_range, get_count_of_steps_for_every_number(1, 5))
