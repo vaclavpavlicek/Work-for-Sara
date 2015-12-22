@@ -47,3 +47,5 @@ class WorkForSaraTest(unittest.TestCase):
     def test_read_line_from_file(self):
         self.assertEquals("2", read_line_from_file("test_input.txt", 1))
 
+    def test_parse_range(self):
+        self.assertEquals([10, 20], parse_range("10 20"))

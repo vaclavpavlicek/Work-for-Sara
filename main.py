@@ -46,3 +46,7 @@ def read_line_from_file(path_to_input_file, number_of_line):
     for x in range(0, number_of_line):
         line = file.readline()
     return line
+
+
+def parse_range(line):
+    return [int(line[0:line.index(' ')]), int(line[line.index(' ') + 1:])]
