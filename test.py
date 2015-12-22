@@ -43,3 +43,7 @@ class WorkForSaraTest(unittest.TestCase):
             5: 5
         }
         self.assertEquals("7 3", find_the_highest_count_of_steps(actual_range, 1))
+
+    def test_read_line_from_file(self):
+        self.assertEquals("2", read_line_from_file("test_input.txt", 1))
+

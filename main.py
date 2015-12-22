@@ -38,3 +38,11 @@ def find_the_highest_count_of_steps(actual_range, start):
             result[0] = actual_range[x]
             result[1] = x
     return str(result[0]) + " " + str(result[1])
+
+
+def read_line_from_file(path_to_input_file, number_of_line):
+    file = open(path_to_input_file)
+    line = ""
+    for x in range(0, number_of_line):
+        line = file.readline()
+    return line
