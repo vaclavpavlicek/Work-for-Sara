@@ -31,9 +31,9 @@ def get_count_of_steps_for_every_number(start, end):
     return result
 
 
-def find_the_highest_count_of_steps(actual_range, start):
+def find_the_highest_count_of_steps(actual_range, start, end):
     result = [0, 0]
-    for x in range(start, len(actual_range) + 1):
+    for x in range(start, end + 1):
         if result[0] < actual_range[x]:
             result[0] = actual_range[x]
             result[1] = x
@@ -50,3 +50,18 @@ def read_line_from_file(path_to_input_file, number_of_line):
 
 def parse_range(line):
     return [int(line[0:line.index(' ')]), int(line[line.index(' ') + 1:])]
+
+
+def generate_output_file(path_to_input_file):
+    first_line = read_line_from_file(path_to_input_file, 1)
+    output_file = open('output.txt', 'w')
+    count_of_inputs = int(first_line[:first_line.index("\n")])
+    result = ""
+    for x in range(2, count_of_inputs + 2):
+        int_range = parse_range(read_line_from_file("test_input.txt", x))
+        counted_range = get_count_of_steps_for_every_number(int_range[0], int_range[1])
+        result += find_the_highest_count_of_steps(counted_range, int_range[0], int_range[1])
+        if not x + 1 == count_of_inputs + 2:
+            result += "\n"
+    output_file.write(result)
+    return result
